@@ -8,8 +8,13 @@ services:
       SANDBOX_MODE: 'True'
     depends_on:
       - couchdb
+    ports:
+      - 8080:8080
+    
   couchdb:
     image: "couchdb:1.6"
     environment:
       COUCHDB_USER: op
       COUCHDB_PASSWORD: op
+    ports:
+      - 5984:5984
